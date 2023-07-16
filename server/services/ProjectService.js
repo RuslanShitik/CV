@@ -1,4 +1,4 @@
-import Project from "./models/Project.js";
+import Project from "../models/Project.js";
 
 class ProjectService {
     async create(project){

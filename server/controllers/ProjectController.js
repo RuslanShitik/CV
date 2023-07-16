@@ -1,8 +1,13 @@
-import ProjectService from "../ProjectService.js";
+import ProjectService from "../services/ProjectService.js";
+import { validationResult } from "express-validator"
 
 class ProjectController {
     async create(req, res){
         try {
+            const errors = validationResult(req)
+            if (!errors.isEmpty()){
+                return res.status(400).json(errors.array())
+            }
             const createdProject = await ProjectService.create(req.body)
             return res.json(createdProject)
         }
