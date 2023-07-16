@@ -17,10 +17,14 @@
           v-model="project.description"
       />
     </el-form-item>
+    <el-form-item>
+      <el-button type="primary" @click="submitForm">Create</el-button>
+    </el-form-item>
   </el-form>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "CreateProject",
   data(){
@@ -31,7 +35,14 @@ export default {
         description: '',
       },
     }
-  }
+  },
+  methods: {
+    async submitForm(){
+      const response = await axios.delete('http://localhost:3000/api/project/')
+      console.log(response)
+      await axios.post('http://localhost:3000/api/project/', this.project)
+    }
+  },
 }
 </script>
 
