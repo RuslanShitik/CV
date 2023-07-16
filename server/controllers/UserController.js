@@ -4,8 +4,7 @@ class UserController{
     async create(req, res){
         try{
             const createdUser = await UserService.create(req.body)
-            const token = AuthService.generateToken(createdUser._id)
-            res.json({...createdUser._doc, token})
+            res.json(createdUser)
         }
         catch (e){
             console.log(e);

@@ -1,7 +1,8 @@
 import Project from "../models/Project.js";
 
 class ProjectService {
-    async create(project){
+    async create(project, userId){
+        project.createdBy = userId
         const createdProject = await Project.create(project);
         return createdProject
     }
@@ -14,16 +15,18 @@ class ProjectService {
         if (!id){
             throw new Error('id is required!')
         }
-        else{
-            const project = await Project.findById(id)
-            return project
+        const project = await Project.findById(id)
+        if (!project){
+            throw new Error('project not found')
         }
+
+        return project
     }
     async update(id, project){
         if (!id){
             throw new Error('id is required!')
         }
-        else if (!project){
+        if (!project){
             throw new Error('params is required!')
         }
         else{
@@ -35,7 +38,7 @@ class ProjectService {
         if (!id){
             throw new Error('id is required!')
         }
-        else{
+        else {
             const deletedProject = await Project.findByIdAndDelete(id)
             return deletedProject
         }

@@ -8,7 +8,7 @@ class ProjectController {
             if (!errors.isEmpty()){
                 return res.status(400).json(errors.array())
             }
-            const createdProject = await ProjectService.create(req.body)
+            const createdProject = await ProjectService.create(req.body, req.userId)
             return res.json(createdProject)
         }
         catch (e) {
