@@ -1,12 +1,10 @@
 <template>
-  <div>
-    progile
-  </div>
+  <div>suka</div>
 </template>
 
 <script>
 export default {
-  name: "ProfileView"
+  name: "FooterBlock"
 }
 </script>
 

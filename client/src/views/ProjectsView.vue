@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
-    <div class="row my-5">
-      <div class="col-12">
-        <CreateProject/>
-      </div>
-    </div>
-  </div>
+  <el-row>
+    <el-col :span="24">
+      <CreateProject/>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
