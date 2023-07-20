@@ -27,7 +27,13 @@ class UserService {
         if (!isValidPassword){
             throw new Error('wrong password!')
         }
-        return user
+        const token = await AuthService.generateToken(user._id)
+        const responseUser = {
+            fullName: user.fullName,
+            login: user.login,
+            token: token
+        };
+        return responseUser
     }
 }
 

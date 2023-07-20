@@ -24,8 +24,7 @@ class UserController{
     async login(req, res){
         try{
             const user = await UserService.login(req.body.login, req.body.password)
-            const token = await AuthService.generateToken(user._id)
-            return res.json({user, token})
+            return res.json(user)
         }
         catch (e){
             console.log(e);
