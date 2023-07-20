@@ -11,7 +11,7 @@
     </el-menu-item>
     <div class="flex-grow-1"/>
     <div class="d-flex align-items-center px-3">
-      <el-button v-auth="false">
+      <el-button v-auth="false" @click="$router.push('/auth')">
         Log in
       </el-button>
       <el-button type="primary" v-auth="false" @click="$router.push('/registration')">

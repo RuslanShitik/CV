@@ -45,10 +45,11 @@ import axios from "axios";
 import {setUserToken} from "@/helpers/auth";
 
 export default {
+  //TODO: Validation and auth form
   name: "RegistrationForm",
   data(){
     return{
-      user:{
+      user: {
         fullName: '',
         email: '',
         login: '',
