@@ -13,6 +13,8 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" class="w-100" @click="onSubmit">Log in</el-button>
+        </el-form-item>
+        <el-form-item>
           <el-button class="w-100">Back</el-button>
         </el-form-item>
       </el-form>
@@ -20,7 +22,7 @@
   </el-card>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 
 import { reactive } from "vue";
 
