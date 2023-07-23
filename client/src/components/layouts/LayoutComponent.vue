@@ -5,8 +5,9 @@
     </el-header>
     <el-main>
       <router-view/>
-      <span v-auth="true">Authorized!</span>
-      <span v-auth="false">Unauthorized</span>
+      <p v-auth="true">Authorized!</p>
+      <p v-auth="false">Unauthorized</p>
+      <p>user data: {{ $store.state.user }}</p>
     </el-main>
   </el-container>
 </template>

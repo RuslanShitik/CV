@@ -1,7 +1,7 @@
 <template>
   <el-menu
       mode="horizontal"
-      :ellipsis="true"
+      :ellipsis="false"
   >
     <el-menu-item index="1" @click="$router.push('/')">
       Главная
@@ -11,7 +11,7 @@
     </el-menu-item>
     <div class="flex-grow-1"/>
     <div class="d-flex align-items-center px-3">
-      <el-button v-auth="false">
+      <el-button v-auth="false" @click="$router.push('/auth')">
         Log in
       </el-button>
       <el-button type="primary" v-auth="false" @click="$router.push('/registration')">
@@ -38,10 +38,10 @@ import {logOutUser} from "@/helpers/auth";
 
 export default {
   name: "HeaderBlock",
-  methods: {
+  methods: { //todo:refactor
     logOut(){
       logOutUser();
-      window.location.href = '/'
+      this.$store.commit('setUserData', {user: {isAuth: false}})
     }
   }
 }
