@@ -13,4 +13,12 @@
 </style>
 <script setup>
 import LayoutComponent from "@/components/layouts/LayoutComponent.vue";
+import {onMounted} from "vue";
+import {useStore} from "vuex";
+
+const store = useStore()
+
+onMounted(()=> {
+  store.dispatch('getUserToken')
+})
 </script>

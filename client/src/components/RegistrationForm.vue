@@ -45,7 +45,7 @@ import axios from "axios";
 import {setUserToken} from "@/helpers/auth";
 
 export default {
-  //TODO: Validation and auth form
+  //TODO: Validation
   name: "RegistrationForm",
   data(){
     return{
@@ -61,12 +61,7 @@ export default {
     async handleFormSubmit(){
       const response = await axios.post('http://localhost:3000/auth/register/', this.user)
       setUserToken(response.data.token)
-      window.location.href ='/'
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

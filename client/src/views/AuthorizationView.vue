@@ -1,6 +1,6 @@
 <template>
   <el-row justify="center">
-    <el-col :xs="24" :sm="10" :lg="8" :xl="4">
+    <el-col :xs="24" :sm="10" :lg="6" :xl="4">
       <AuthorizationForm/>
     </el-col>
   </el-row>

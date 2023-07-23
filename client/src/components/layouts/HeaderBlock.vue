@@ -1,7 +1,7 @@
 <template>
   <el-menu
       mode="horizontal"
-      :ellipsis="true"
+      :ellipsis="false"
   >
     <el-menu-item index="1" @click="$router.push('/')">
       Главная
@@ -38,10 +38,10 @@ import {logOutUser} from "@/helpers/auth";
 
 export default {
   name: "HeaderBlock",
-  methods: {
+  methods: { //todo:refactor
     logOut(){
       logOutUser();
-      window.location.href = '/'
+      this.$store.commit('setUserData', {user: {isAuth: false}})
     }
   }
 }
