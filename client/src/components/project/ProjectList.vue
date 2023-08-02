@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row gutter="20">
+    <el-row :gutter="20">
       <el-col
           v-for="project in projects"
           :key="project.id"
@@ -10,7 +10,7 @@
       </el-col>
     </el-row>
 
-    <el-row v-if="loading" gutter="20">
+    <el-row v-if="loading" :gutter="20">
       <el-col
           v-for="project in Array(4)"
           :key="project"
@@ -39,9 +39,9 @@
 </template>
 
 <script setup>
-import ProjectItem from "@/components/ProjectItem.vue";
+import ProjectItem from "@/components/project/ProjectItem.vue";
 import {useProjects} from "@/hooks/useProjects";
-import ProjectItemSkeleton from "@/components/ProjectItemSkeleton.vue";
+import ProjectItemSkeleton from "@/components/project/ProjectItemSkeleton.vue";
 
 const {projects, loading, errors} = useProjects()
 

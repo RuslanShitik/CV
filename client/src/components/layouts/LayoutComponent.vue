@@ -20,7 +20,3 @@ export default {
   components: {HeaderBlock}
 }
 </script>
-
-<style scoped>
-
-</style>

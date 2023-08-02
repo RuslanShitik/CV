@@ -44,7 +44,6 @@ const onSubmit = async () => {
   try {
     const response = await axios.post('http://localhost:3000/auth/login/', userForm)
     if(response.status === 200){
-      console.log('this.$store:', store)
       store.commit('setUserData', { user: { isAuth: true }});
       setUserToken(response.data.token);
     }
@@ -54,6 +53,6 @@ const onSubmit = async () => {
     ElMessage.error(e.response?.data?.message)
   }
 
-  //todo: refactor and status valid messages (front+back), refactor directive, change navigate and add store for user
+  //todo: refactor and status valid messages (front+back), refactor directive, change navigate and add store for user, refactor redirect
 }
 </script>

@@ -1,8 +1,10 @@
 <template>
   <el-card>
     <template #header>
-      <el-text>Project name: {{ project?.name }}</el-text>
-      <el-text>Publish date: {{ project?.createdAt }}</el-text>
+      <div class="card-header">
+        <el-text size="large">{{ project?.name }}</el-text>
+        <el-text size="small" type="info">{{ moment(project?.createdAt).fromNow()}}</el-text>
+      </div>
     </template>
     <template #default>
       <el-text>автор</el-text>
@@ -19,6 +21,7 @@
 
 <script setup>
 import { defineProps } from 'vue';
+import moment from "moment";
 defineProps({
   project: {
     type: Object,
@@ -28,5 +31,9 @@ defineProps({
 </script>
 
 <style scoped>
-
+.card-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>
